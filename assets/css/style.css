@@ -1,1 +1,76 @@
+body {
+  background-color: #e2eebc;
+}
+header {
+  font-size: 8vmin;
+  font-weight: bold;
+  line-height: 200%;
+  height: 15vh;
+  border: 1px solid black;
+  text-align: center;
+}
+aside {
+  margin-top: 2%;
+  border: 1px solid black;
+  /*display: inline-block;*/
+  width: 15%;
+  height: 71vh;
+  vertical-align: top;
+  position: absolute;
+}
+main {
+  display: inline-block;
+}
+.container { /*main*/
+  /*display: inline-block;*/
+  margin-top: 2%;
+  /*margin-right:2%;*/
+  border: 1px solid black;
+  left: 15%;
+  height: vh;
+  width: 75%;
+  position:relative;
+  padding-left: 19px;
+  padding-top: 13px;
+}
+.statsContent{
+  font-weight: bold;
+  background-color: lightgray;
+  height:12%;
+  width: 80%;
+  text-align: center;
+  border: 1px solid black;
+  margin-bottom: 3%;
+  margin-left: 10%;
+  line-height: 300%;
+}
+.statsHeader {
+  text-align: center;
+  vertical-align: center;
+  margin-top: 10%;
+  font-weight: bold;
+}
+.cards {
+  background-color: blue;
+  height: 20vh;
+  width: 11vw;
+  margin: auto;
+  /*padding: 1vh;*/
+  /*display: inline-block;*/
+}
 
+.dan {
+  background-image: url("../images/dan.jpg");
+  position: absolute;
+}
+.lfzCard {
+  background-image: url("../images/lfz-card.jpg");
+  position: absolute;
+}
+.dan,
+.lfzCard {
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
