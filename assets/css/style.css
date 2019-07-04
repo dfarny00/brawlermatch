@@ -1,1 +1,105 @@
+body{
+  background-color: rgb(241, 188, 118);
+}
+header {
+  font-weight: bold;
+  font-size: 5vmin;
+  border: 2px solid black;
+  text-align: center;
+  width: 100%;
+  height: 10vh;
+  line-height: 1.6;
+}
+aside {
+  border: 2px solid black;
+  width: 200px;
+  height: 500px;
+  margin-top: 1%;
+  display: inline-block;
+  vertical-align: bottom;
+}
+.statsHeader,
+.statsContent {
+  font-weight: bold;
+  font-size: 2vmin;
+  text-align: center;
+  width: 80%;
+  height: 6vh;
+  margin: auto;
+  padding-top: 8%;
+}
+.statsHeader {
+  line-height: 4.7;
+}
+.statsContent {
+  border: 2px solid black;
+  background-color: lightgrey;
+}
+main {
+  border: 2px solid black;
+  height: 500px;
+  width: 700px;
+  display: inline-block;
+  position: relative;
+  margin-top: 1px;
+}
+.containerForAsideAndMain {
+  border: 2px solid black;
+}
+.cards {
+  position: relative;
+  border: 2px solid black;
+  width: 16%;
+  height: 33%;
+  float: left;
+  position: relative;
+}
+.dan,
+.lfzCard,
+.bill,
+.brett,
+.cody,
+.scott,
+.tim-d,
+.tim-h,
+.tj {
+  background-position: center;
+  background-size: cover;
+  height: 90%;
+  width: 90%;
+  top: 5%;
+  left: 5%;
+  position: absolute;
+}
+.dan {
+  background-image: url("../images/dan.jpg");
+}
+.lfzCard {
+  background-image: url("../images/lfz-card.jpg");
+}
+.bill {
+  background-image: url("../images/bill.jpg");
+}
+.brett {
+  background-image: url("../images/brett.jpg");
+}
+.cody {
+  background-image: url("../images/cody.jpg");
+}
+.scott {
+  background-image: url("../images/scott.jpg");
+}
+.tim-d {
+  background-image: url("../images/tim-d.jpg");
+}
+.tim-h {
+  background-image: url("../images/tim-h.jpg");
+}
+.tj {
+  background-image: url("../images/tj.jpg");
+}
 
+/*must stay at bottom of CSS document to ensure function*/
+.hidden{
+  display: none;
+}
