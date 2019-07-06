@@ -1,5 +1,6 @@
 body{
-  background-color: rgb(241, 188, 118);
+  /*background-color: rgb(241, 188, 118);*/
+  background-image: url(../images/blind-robot.jpg);
 }
 header {
   font-weight: bold;
