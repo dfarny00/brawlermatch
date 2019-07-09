@@ -9,7 +9,6 @@ function intializeApp(){
   $(".lfzCard").on("click", handleCardClick);
 }
 function handleCardClick(event){
-
   var clickCurrentTarget = $(event.currentTarget);
   clickCurrentTarget.addClass('hidden');
   if (!firstCardClicked){
@@ -20,16 +19,19 @@ function handleCardClick(event){
     secondCardUrl = $(secondCardClicked).siblings().css("background-image");
     $(".lfzCard").off("click", handleCardClick);
     if (firstCardUrl === secondCardUrl){
-      firstCardClicked.siblings().hide(2000);
-      secondCardClicked.siblings().hide(2000);
+      firstCardClicked.addClass('hidden');
+      secondCardClicked.addClass('hidden');
       console.log("cards match");
       matches++;
       firstCardClicked = null;
       secondCardClicked = null;
       $(".lfzCard").on("click", handleCardClick);
       if(max_matches === matches){
-        console.log('you won!!!');
-        createModal();
+        var winningDiv = $('.youWin');
+        winningDiv.removeClass('hidden');
+        var playAgainButton = $('button');
+        playAgainButton.on('click', resetGame);
+        matches = null;
       }
     } else {
       console.log("cards don't match");
@@ -53,9 +55,8 @@ function createWinningDiv(){
   playAgain.text('Play again?');
   $("button").on("click", resetGame);
   $('body').append(winningDiv);
-
 }
 function resetGame(event){
-  var buttonPressed = $(event.currentTarget);
-  $('div').removeClass('hidden');
+  $('.youWin').addClass('hidden');
+  $('.lfzCard').removeClass('hidden');
 }

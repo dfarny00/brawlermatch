@@ -14,8 +14,7 @@ header {
 aside {
   border: 2px solid black;
   width: 200px;
-  height: 500px;
-  margin-top: 1%;
+  height: 635px;
   display: inline-block;
   vertical-align: bottom;
 }
@@ -38,18 +37,19 @@ aside {
 }
 main {
   border: 2px solid black;
-  height: 500px;
-  width: 700px;
+  height: 635px;
+  width: 1200px;
   display: inline-block;
   position: relative;
-  margin-top: 1px;
 }
 .containerForAsideAndMain {
-  border: 2px solid black;
+  /*border: 2px solid black;*/
+  margin-top: 1%;
+  font-size: 0;
 }
 .cards {
   position: relative;
-  border: 2px solid black;
+  /*border: 2px solid black;*/
   width: 16%;
   height: 33%;
   float: left;
@@ -99,7 +99,26 @@ main {
 .tj {
   background-image: url("../images/tj.jpg");
 }
-
+.youWin {
+  background-color: orange;
+  border: 2px solid white;
+  color: white;
+  width: 25%;
+  height: 25%;
+  position: absolute;
+  left: 30%;
+  top: 30%;
+  font-size: 6vmin;
+  border-radius: 25px;
+  text-align: center;
+  padding-top: 10px;
+}
+.youWin > button {
+  background-color: #008CBA;
+  font-size: 16px;
+  color: white;
+  padding: 5px;
+}
 /*must stay at bottom of CSS document to ensure function*/
 .hidden{
   display: none;
