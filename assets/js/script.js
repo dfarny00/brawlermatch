@@ -9,6 +9,7 @@ var attempts = 0;
 var games_played = 0;
 var accuracy = 0;
 function intializeApp(){
+  shuffleCards();
   $(".lfzCard").on("click", handleCardClick);
 }
 function handleCardClick(event){
@@ -29,13 +30,12 @@ function handleCardClick(event){
       secondCardClicked = null;
       $(".lfzCard").on("click", handleCardClick);
       if(max_matches === matches){
-       // $(".lfzCard").off("click", handleCardClick);
+        $(".lfzCard").off("click", handleCardClick);
         var winningDiv = $('.youWin');
         winningDiv.removeClass('hidden');
         var playAgainButton = $('button');
         playAgainButton.on('click', resetGame);
         games_played++;
-        //$(".lfzCard").on("click", handleCardClick);
       }
     } else {
       console.log("cards don't match");
@@ -62,7 +62,8 @@ function createWinningDiv(){
   $('body').append(winningDiv);
 }
 function resetGame(event){
-  //$(".lfzCard").on("click", handleCardClick);
+  shuffleCards();
+  $(".lfzCard").on("click", handleCardClick);
   $('.youWin').addClass('hidden');
   $('.lfzCard').removeClass('hidden');
   matches = null;
@@ -79,4 +80,21 @@ function displayStats(){
   $('.accuracy').text(yourAccuracy + '%');
   $('.gamesPlayed').text(games_played);
   $('.attempts').text(attempts);
+}
+function shuffleCards(){
+  var cardsArray = ['dan', 'bill', 'brett', 'cody', 'scott', 'tim-d', 'tim-h', 'tj', 'dan', 'bill', 'brett', 'cody', 'scott', 'tim-d', 'tim-h', 'tj', 'dan', 'dan'];
+  var frontCards = $('.frontCard');
+  var frontCardsAtCardNum;
+  var randomNum = 0;
+  var roundRandomNum = 0;
+  var spliceNum = "";
+  for (var cardsArrayNum = 0; cardsArrayNum < 18; cardsArrayNum++) {
+    frontCards.removeClass(cardsArray[cardsArrayNum]);
+  }
+    $('.frontCard').each(function(cardNum){
+      randomNum = Math.random() * (cardsArray.length - 1);
+      roundRandomNum = Math.round(randomNum);
+      spliceNum = cardsArray.splice(roundRandomNum, 1);
+      $(this).addClass(spliceNum);
+    })
 }

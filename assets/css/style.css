@@ -10,6 +10,7 @@ header {
   width: 100%;
   height: 10vh;
   line-height: 1.6;
+  color: white;
 }
 aside {
   border: 2px solid black;
