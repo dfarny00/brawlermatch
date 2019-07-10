@@ -1,5 +1,4 @@
 body{
-  /*background-color: rgb(241, 188, 118);*/
   background-image: url(../images/brawlStarsBackgroundImage3.jpg);
   background-repeat: no-repeat;
   background-position: center;
@@ -8,17 +7,14 @@ body{
 header {
   font-weight: bold;
   font-size: 7vmin;
-  /* border: 2px solid black; */
   text-align: center;
   width: 100%;
   height: 10vh;
   line-height: 1.6;
   color:red;
   text-shadow: -2px 2px black;
-
 }
 aside {
-  /* border: 2px solid black; */
   width: 200px;
   height: 635px;
   display: inline-block;
@@ -47,14 +43,12 @@ aside {
   background-color: rgb(82, 179, 211);
 }
 main {
-  /* border: 2px solid black; */
-  height: 80vmin;/*635px;*/
-  width: 150vmin;/*1200px;*/
+  height: 80vmin;
+  width: 150vmin;
   display: inline-block;
   position: relative;
 }
 .containerForAsideAndMain {
-  /*border: 2px solid black;*/
   margin-top: 1%;
   font-size: 0;
   display: flex;
@@ -62,7 +56,6 @@ main {
 }
 .cards {
   position: relative;
-  /*border: 2px solid black;*/
   width: 16%;
   height: 33%;
   float: left;
@@ -136,7 +129,7 @@ main {
   color: white;
   padding: 2px;
 }
-/*must stay at bottom of CSS document to ensure function*/
+
 .hidden{
   display: none;
 }
