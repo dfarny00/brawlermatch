@@ -27,7 +27,6 @@ function handleCardClick(event){
     $(".brawlStars").off("click", handleCardClick);
     attempts++;
     if (firstCardUrl === secondCardUrl){
-      console.log("cards match");
       matches++;
       firstCardClicked = null;
       secondCardClicked = null;
@@ -40,7 +39,6 @@ function handleCardClick(event){
         playAudio()
       }
     } else {
-      console.log("cards don't match");
       flipCardsBack();
     }
     displayStats();
