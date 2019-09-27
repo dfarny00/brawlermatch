@@ -601,7 +601,7 @@
     text-align: center;
     width: 80vw;
     height: 2vh;
-    /* margin: auto; */
+    margin: 1%;
     padding-top: 2%;
     color: white;
     border-radius: 15px;
@@ -628,9 +628,20 @@
 
   }
 
+  .brawlStars {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 15px;
+    height: 90%;
+    width: 90%;
+    top: 5%;
+    left: 5%;
+    position: absolute;
+  }
+
   .elPrimo,
   .pam,
-  .brawlStars,
   .nita,
   .poco,
   .frank,
@@ -639,7 +650,8 @@
   .mortis,
   .tara {
     background-position: center;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     height: 90%;
     width: 90%;
     top: 5%;
