@@ -573,11 +573,13 @@
     height: 8vh;
     width: 100vw;
     font-weight: bold;
-    font-size: 7vmin;
+    font-family: 'Lilita One', cursive;
+    font-size: 10vmin;
     text-align: center;
     line-height: 1.6;
-    color:red;
-    text-shadow: -2px 2px black;
+    margin-bottom: 1vh;
+    color: #EF1919;
+    text-shadow: -2px 4px black;
   }
 
   aside {
@@ -597,6 +599,7 @@
   .statsHeader,
   .statsContent {
     font-weight: bold;
+    font-family: 'Lilita One', cursive;
     font-size: 2.2vmin;
     text-align: center;
     width: 80vw;
@@ -604,7 +607,7 @@
     margin: 1%;
     padding-top: 2%;
     color: white;
-    border-radius: 15px;
+    border-radius: 5px;
   }
 
   .statsHeader {
@@ -632,7 +635,7 @@
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    border-radius: 15px;
+    border-radius: 10px;
     height: 90%;
     width: 90%;
     top: 5%;
