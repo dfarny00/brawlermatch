@@ -1,1 +1,134 @@
-
+body{
+  background-image: url(../images/brawlStarsBackgroundImage3.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+header {
+  font-weight: bold;
+  font-size: 7vmin;
+  text-align: center;
+  width: 100%;
+  height: 10vh;
+  line-height: 1.6;
+  color:red;
+  text-shadow: -2px 2px black;
+}
+aside {
+  width: 200px;
+  height: 635px;
+  display: inline-block;
+  vertical-align: bottom;
+  border-radius: 25px;
+}
+.statsHeader,
+.statsContent {
+  font-weight: bold;
+  font-size: 2.5vmin;
+  text-align: center;
+  width: 80%;
+  height: 6vh;
+  margin: auto;
+  padding-top: 8%;
+  color: white;
+  border-radius: 15px;
+}
+.statsHeader {
+  line-height: 3;
+  color: red;
+  text-shadow: -2px 2px black;
+}
+.statsContent {
+  border: 2px solid black;
+  background-color: rgb(82, 179, 211);
+}
+main {
+  height: 80vmin;
+  width: 150vmin;
+  display: inline-block;
+  position: relative;
+}
+.containerForAsideAndMain {
+  margin-top: 1%;
+  font-size: 0;
+  display: flex;
+  flex-wrap: nowrap
+}
+.cards {
+  position: relative;
+  width: 16%;
+  height: 33%;
+  float: left;
+  position: relative;
+}
+.elPrimo,
+.pam,
+.brawlStars,
+.nita,
+.poco,
+.frank,
+.barley,
+.carl,
+.mortis,
+.tara {
+  background-position: center;
+  background-size: cover;
+  height: 90%;
+  width: 90%;
+  top: 5%;
+  left: 5%;
+  position: absolute;
+}
+.elPrimo {
+  background-image: url("../images/elPrimo.png");
+}
+.pam {
+  background-image: url("../images/pam.png")
+}
+.brawlStars {
+  background-image: url("../images/brawlStarsLogo.png");
+}
+.nita {
+  background-image: url("../images/nita.png");
+}
+.poco {
+  background-image: url("../images/poco.png");
+}
+.frank {
+  background-image: url("../images/frank.png");
+}
+.barley {
+  background-image: url("../images/barley.png");
+}
+.carl {
+  background-image: url("../images/carl.png");
+}
+.mortis {
+  background-image: url("../images/mortis.png");
+}
+.tara {
+  background-image: url("../images/tara.png");
+}
+.youWin {
+  background-color: #fefefe;
+  border: 2px solid black;
+  color: red;
+  width: 25%;
+  height: 20%;
+  position: absolute;
+  left: 30%;
+  top: 30%;
+  font-size: 6vmin;
+  border-radius: 25px;
+  text-align: center;
+  padding-top: 10px;
+}
+.youWin > button {
+  background-color: #008CBA;
+  font-size: 16px;
+  color: white;
+  padding: 2px;
+}
+.hidden{
+  display: none;
+}
