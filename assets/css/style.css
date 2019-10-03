@@ -1,21 +1,25 @@
 /* desktop */
 @media (min-width: 1281px) {
+
   body{
     background-image: url(../images/brawlStarsBackgroundImage3.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto;
   }
+
   header {
     font-weight: bold;
+    font-family: 'Lilita One', cursive;
     font-size: 7vmin;
     text-align: center;
     width: 100%;
     height: 10vh;
     line-height: 1.6;
-    color:red;
-    text-shadow: -2px 2px black;
+    color: #EF1919;
+    text-shadow: -2px 4px black;
   }
+
   aside {
     width: 200px;
     height: 635px;
@@ -23,49 +27,73 @@
     vertical-align: bottom;
     border-radius: 25px;
   }
+
   .statsHeader,
   .statsContent {
     font-weight: bold;
-    font-size: 2.5vmin;
+    font-size: 2.2vmin;
+    font-family: 'Lilita One', cursive;
     text-align: center;
     width: 80%;
     height: 6vh;
-    margin: auto;
-    padding-top: 8%;
+    margin-left: 15px;
+    margin-top: 25px;
+    padding-top: 18%;
     color: white;
-    border-radius: 15px;
+    border-radius: 5px;
   }
+
   .statsHeader {
     line-height: 3;
     color: red;
     text-shadow: -2px 2px black;
   }
+
   .statsContent {
     border: 2px solid black;
     background-color: rgb(82, 179, 211);
   }
+
   main {
     height: 80vmin;
-    width: 150vmin;
+    width: 200vmin;
     display: inline-block;
     position: relative;
   }
+
+  main.container {
+    margin-left: 2vw;
+  }
+
   .containerForAsideAndMain {
     margin-top: 1%;
     font-size: 0;
     display: flex;
     flex-wrap: nowrap
   }
+
   .cards {
     position: relative;
     width: 16%;
     height: 33%;
     float: left;
-    position: relative;
   }
+
+    .brawlStars {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    height: 90%;
+    width: 90%;
+    top: 5%;
+    left: 5%;
+    position: absolute;
+    border: solid 2px black;
+  }
+
   .elPrimo,
   .pam,
-  .brawlStars,
   .nita,
   .poco,
   .frank,
@@ -74,43 +102,55 @@
   .mortis,
   .tara {
     background-position: center;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     height: 90%;
     width: 90%;
     top: 5%;
     left: 5%;
     position: absolute;
   }
+
   .elPrimo {
     background-image: url("../images/elPrimo.png");
   }
+
   .pam {
     background-image: url("../images/pam.png")
   }
+
   .brawlStars {
     background-image: url("../images/brawlStarsLogo.png");
   }
+
   .nita {
     background-image: url("../images/nita.png");
   }
+
   .poco {
     background-image: url("../images/poco.png");
   }
+
   .frank {
     background-image: url("../images/frank.png");
   }
+
   .barley {
     background-image: url("../images/barley.png");
   }
+
   .carl {
     background-image: url("../images/carl.png");
   }
+
   .mortis {
     background-image: url("../images/mortis.png");
   }
+
   .tara {
     background-image: url("../images/tara.png");
   }
+
   .youWin {
     background-color: #fefefe;
     border: 2px solid black;
@@ -125,35 +165,42 @@
     text-align: center;
     padding-top: 10px;
   }
+
   .youWin > button {
     background-color: #008CBA;
     font-size: 16px;
     color: white;
     padding: 2px;
   }
+
   .hidden{
     display: none;
   }
+
 }
 
 /* ipad landscape */
 @media only screen and  (min-width: 1024px) and (max-width: 1100px){
+
   body{
     background-image: url(../images/brawlStarsBackgroundImage3.jpg);
     background-repeat: no-repeat;
     background-position: center;
     background-size: auto;
   }
+
   header {
+    font-family: 'Lilita One', cursive;
+    color: #EF1919;
+    text-shadow: -2px 4px black;
     font-weight: bold;
     font-size: 7vmin;
     text-align: center;
     width: 100%;
     height: 10vh;
     line-height: 1.6;
-    color:red;
-    text-shadow: -2px 2px black;
   }
+
   aside {
     width: 200px;
     height: 635px;
@@ -161,49 +208,73 @@
     vertical-align: bottom;
     border-radius: 25px;
   }
+
   .statsHeader,
   .statsContent {
     font-weight: bold;
-    font-size: 2.5vmin;
+    font-family: 'Lilita One', cursive;
+    font-size: 2.2vmin;
     text-align: center;
-    width: 80%;
-    height: 6vh;
-    margin: auto;
-    padding-top: 8%;
+    width: 98%;
+    height: 5vh;
+    margin-left: 5px;
+    margin-top: 36px;
+    padding-top: 16%;
     color: white;
-    border-radius: 15px;
+    border-radius: 5px;
   }
+
   .statsHeader {
     line-height: 3;
     color: red;
     text-shadow: -2px 2px black;
   }
+
   .statsContent {
     border: 2px solid black;
     background-color: rgb(82, 179, 211);
   }
+
   main {
     height: 80vmin;
-    width: 150vmin;
+    width: 200vmin;
     display: inline-block;
     position: relative;
   }
+
+  main.container {
+    margin-right: .5vw;
+  }
+
   .containerForAsideAndMain {
     margin-top: 1%;
     font-size: 0;
     display: flex;
     flex-wrap: nowrap
   }
+
   .cards {
     position: relative;
-    width: 16%;
-    height: 33%;
+    width: 14%;
+    height: 30%;
     float: left;
-    position: relative;
+    margin-top: 20px;
+    margin-left: 20px;
   }
+
+  .brawlStars {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    border: solid 2px black;
+  }
+
   .elPrimo,
   .pam,
-  .brawlStars,
   .nita,
   .poco,
   .frank,
@@ -212,43 +283,57 @@
   .mortis,
   .tara {
     background-position: center;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     height: 90%;
     width: 90%;
     top: 5%;
     left: 5%;
     position: absolute;
   }
+
   .elPrimo {
     background-image: url("../images/elPrimo.png");
   }
+
   .pam {
     background-image: url("../images/pam.png")
   }
+
   .brawlStars {
     background-image: url("../images/brawlStarsLogo.png");
+    width: 13vw;
+    /* background-size: contain; */
   }
+
   .nita {
     background-image: url("../images/nita.png");
   }
+
   .poco {
     background-image: url("../images/poco.png");
   }
+
   .frank {
     background-image: url("../images/frank.png");
   }
+
   .barley {
     background-image: url("../images/barley.png");
   }
+
   .carl {
     background-image: url("../images/carl.png");
   }
+
   .mortis {
     background-image: url("../images/mortis.png");
   }
+
   .tara {
     background-image: url("../images/tara.png");
   }
+
   .youWin {
     background-color: #fefefe;
     border: 2px solid black;
@@ -263,12 +348,14 @@
     text-align: center;
     padding-top: 10px;
   }
+
   .youWin > button {
     background-color: #008CBA;
     font-size: 16px;
     color: white;
     padding: 2px;
   }
+
   .hidden{
     display: none;
   }
@@ -277,6 +364,7 @@
 
 /* ipad portait */
 @media only screen and  (min-width: 768px) and (max-width: 800px){
+
   body{
     background-image: url(../images/brawlStarsBackgroundImage3.jpg);
     background-repeat: no-repeat;
@@ -292,7 +380,7 @@
     width: 100vw;
     font-weight: bold;
     font-family: 'Lilita One', cursive;
-    font-size: 10vmin;
+    font-size: 7vmin;
     text-align: center;
     line-height: 1.6;
     margin-bottom: 1vh;
@@ -322,7 +410,7 @@
     width: 80vw;
     height: 3vh;
     margin: 1%;
-    padding-top: 2%;
+    padding-top: 1.5%;
     color: white;
     border-radius: 5px;
   }
@@ -353,10 +441,11 @@
     background-repeat: no-repeat;
     border-radius: 10px;
     height: 90%;
-    width: 90%;
+    width: 47%;
     top: 5%;
-    left: 5%;
+    left: 25.3%;
     position: absolute;
+    border: solid 2px black;
   }
 
   .elPrimo,
@@ -443,10 +532,12 @@
   .hidden{
     display: none;
   }
+
 }
 
 /* iphone 6/7/8 landscape */
 @media only screen and  (min-width: 667px) and (max-width: 700px){
+
   body{
     background-image: url(../images/brawlStarsBackgroundImage3.jpg);
     background-repeat: no-repeat;
@@ -454,67 +545,95 @@
     background-size: cover;
     height: 100vh;
     width: 100vw;
+    margin: 0;
   }
+
   header {
+    font-family: 'Lilita One', cursive;
+    color: #EF1919;
+    text-shadow: -2px 4px black;
     font-weight: bold;
     font-size: 7vmin;
     text-align: center;
     width: 100%;
     height: 10vh;
     line-height: 1.6;
-    color:red;
-    text-shadow: -2px 2px black;
   }
+
   aside {
-    width: 200px;
-    height: 635px;
+    width: 12vw;
+    height: 80vh;
     display: inline-block;
     vertical-align: bottom;
     border-radius: 25px;
   }
+
   .statsHeader,
   .statsContent {
     font-weight: bold;
-    font-size: 2.5vmin;
+    font-family: 'Lilita One', cursive;
+    font-size: 2.2vmin;
     text-align: center;
-    width: 80%;
-    height: 6vh;
-    margin: auto;
-    padding-top: 8%;
+    margin-left: 10px;
+    margin-top: 4.2vmin;
+    padding-top: 15%;
+    width: 100%;
+    height: 5.2vh;
     color: white;
-    border-radius: 15px;
+    border-radius: 5px;
   }
+
   .statsHeader {
     line-height: 3;
     color: red;
     text-shadow: -2px 2px black;
   }
+
   .statsContent {
     border: 2px solid black;
     background-color: rgb(82, 179, 211);
   }
+
   main {
     height: 80vmin;
-    width: 150vmin;
+    width: 200vmin;
     display: inline-block;
     position: relative;
   }
+
+  main.container {
+    margin-left: 4vw;
+  }
+
   .containerForAsideAndMain {
     margin-top: 1%;
     font-size: 0;
     display: flex;
     flex-wrap: nowrap
   }
+
   .cards {
     position: relative;
     width: 16%;
     height: 33%;
     float: left;
-    position: relative;
   }
+
+  .brawlStars {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 10px;
+    height: 90%;
+    width: 90%;
+    top: 5%;
+    left: 5%;
+    position: absolute;
+    border: solid 2px black;
+  }
+
   .elPrimo,
   .pam,
-  .brawlStars,
   .nita,
   .poco,
   .frank,
@@ -523,43 +642,55 @@
   .mortis,
   .tara {
     background-position: center;
-    background-size: cover;
+    background-size: contain;
+    background-repeat: no-repeat;
     height: 90%;
     width: 90%;
     top: 5%;
     left: 5%;
     position: absolute;
   }
+
   .elPrimo {
     background-image: url("../images/elPrimo.png");
   }
+
   .pam {
     background-image: url("../images/pam.png")
   }
+
   .brawlStars {
     background-image: url("../images/brawlStarsLogo.png");
   }
+
   .nita {
     background-image: url("../images/nita.png");
   }
+
   .poco {
     background-image: url("../images/poco.png");
   }
+
   .frank {
     background-image: url("../images/frank.png");
   }
+
   .barley {
     background-image: url("../images/barley.png");
   }
+
   .carl {
     background-image: url("../images/carl.png");
   }
+
   .mortis {
     background-image: url("../images/mortis.png");
   }
+
   .tara {
     background-image: url("../images/tara.png");
   }
+
   .youWin {
     background-color: #fefefe;
     border: 2px solid black;
@@ -574,12 +705,14 @@
     text-align: center;
     padding-top: 10px;
   }
+
   .youWin > button {
     background-color: #008CBA;
     font-size: 16px;
     color: white;
     padding: 2px;
   }
+
   .hidden{
     display: none;
   }
@@ -668,6 +801,7 @@
     top: 5%;
     left: 5%;
     position: absolute;
+    border: solid 2px black;
   }
 
   .elPrimo,
