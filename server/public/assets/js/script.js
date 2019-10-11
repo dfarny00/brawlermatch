@@ -34,13 +34,25 @@ function handleCardClick(event){
       if(max_matches === matches){
         $(".brawlStars").off("click", handleCardClick);
         var winningDiv = $('.youWin');
-        var modalButton = $("<button>");
         winningDiv.removeClass('hidden');
-        winningDiv.html("You Won!" + "<br>");
-        modalButton.attr('id', 'modalButton');
-        modalButton.text("Play again");
-        modalButton.on('click', resetGame);
-        winningDiv.append(modalButton);
+        winningDiv.text("You Won!");
+
+        // var modalButton = $("<button>");
+        // modalButton.attr('id', 'modalButton');
+        // modalButton.text("Play again");
+        // modalButton.on('click', resetGame);
+        // winningDiv.append(modalButton);
+
+        var inputLabel = $("<label>");
+        inputLabel.attr("for", "nameInput");
+        inputLabel.addClass("labelInput");
+        inputLabel.html("<br>" + "Enter your name: ");
+        winningDiv.append(inputLabel);
+
+        var inputForm = $("<input>");
+        inputForm.attr("type", "text");
+        inputForm.attr("id", "nameInput");
+        winningDiv.append(inputForm);
         games_played++;
         playAudio();
       }
