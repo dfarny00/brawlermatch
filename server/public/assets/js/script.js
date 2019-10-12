@@ -12,6 +12,39 @@ var accuracy = 0;
 function intializeApp(){
   shuffleCards();
   $(".brawlStars").on("click", handleCardClick);
+  displayScores();
+
+
+}
+
+function getScores(){
+  var scoresConfig = {
+    datatype: "json",
+    url: "/api/highScore.php",
+    success: function(response) {
+      console.log("Success response: ", response);
+      return response;
+    },
+    error: function(response) {
+      console.log("Error response ", response);
+    }
+  };
+  $.ajax(scoresConfig);
+}
+
+function displayScores(){
+  var scoreCall = new Promise(function(resolve, reject){
+    return getScores();
+  });
+  scoreCall.then( function(result){
+    console.log("result", result);
+    var scoreDiv = $("<div>");
+    scoreDiv.addClass("scores");
+    scoreDiv.text("Name: " + result[0].name + " Attempts: " + result[0].attempts + " Accuracy: " + result[0].accuracy + "%");
+    $("body").append(scoreDiv);
+  });
+
+
 }
 
 function handleCardClick(event){
@@ -53,6 +86,19 @@ function handleCardClick(event){
         inputForm.attr("type", "text");
         inputForm.attr("id", "nameInput");
         winningDiv.append(inputForm);
+
+        var inputButton = $("<input>");
+        inputButton.attr("type", "submit");
+        inputButton.attr("id", "nameButton");
+        winningDiv.append(inputButton);
+
+
+
+        var scoreTable = $("<div>");
+        scoreTable.addClass("scores");
+
+
+
         games_played++;
         playAudio();
       }
