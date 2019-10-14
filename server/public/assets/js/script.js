@@ -12,9 +12,20 @@ var accuracy = 0;
 function intializeApp(){
   shuffleCards();
   $(".brawlStars").on("click", handleCardClick);
-  displayScores();
+  getScores();
 
+}
 
+function displayScores(res) {
+  for(var scoreCount = 0; scoreCount < res.length; scoreCount++){
+    var tableRow = $("<tr>");
+    var rank = $("<td>").text(scoreCount);
+    var name = $("<td>").text(res[scoreCount].name);
+    var attempts = $("<td>").text(res[scoreCount].attempts);
+    var accuracy = $("<td>").text(res[scoreCount].accuracy);
+    tableRow.append(rank, name, attempts, accuracy);
+    $("table").append(tableRow);
+  }
 }
 
 function getScores(){
@@ -22,29 +33,10 @@ function getScores(){
     datatype: "json",
     url: "/api/highScore.php",
     success: function(response) {
-      console.log("Success response: ", response);
-      return response;
-    },
-    error: function(response) {
-      console.log("Error response ", response);
+      displayScores(response);
     }
   };
   $.ajax(scoresConfig);
-}
-
-function displayScores(){
-  var scoreCall = new Promise(function(resolve, reject){
-    return getScores();
-  });
-  scoreCall.then( function(result){
-    console.log("result", result);
-    var scoreDiv = $("<div>");
-    scoreDiv.addClass("scores");
-    scoreDiv.text("Name: " + result[0].name + " Attempts: " + result[0].attempts + " Accuracy: " + result[0].accuracy + "%");
-    $("body").append(scoreDiv);
-  });
-
-
 }
 
 function handleCardClick(event){
