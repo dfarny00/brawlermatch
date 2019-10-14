@@ -43,12 +43,6 @@
     border-radius: 5px;
   }
 
-  .statsHeader {
-    line-height: 3;
-    color: red;
-    text-shadow: -2px 2px black;
-  }
-
   .statsContent {
     border: 2px solid black;
     background-color: rgb(82, 179, 211);
@@ -152,10 +146,10 @@
   }
 
   .youWin {
-    background-color: #fefefe;
+    background-color: #FFC025;
     border: 2px solid black;
-    color: red;
-    width: 25%;
+    color: #EF1919;
+    width: 35%;
     height: 20%;
     position: absolute;
     left: 30%;
@@ -166,16 +160,52 @@
     padding-top: 10px;
   }
 
-  .youWin > button {
-    background-color: #008CBA;
-    font-size: 16px;
+    .youWin > label {
+    color: #EF1919;
+  }
+
+  #nameButton {
+    background-color: #EF1919;
+    font-size: 14px;
+    color: #FFC025;
+    padding: 4px;
+    font-weight: bold;
+    border-radius: 10%;
+  }
+
+  #nameButton:hover {
+    background-color: rgb(82, 179, 211);
     color: white;
-    padding: 2px;
+    cursor:pointer;
   }
 
   .hidden{
     display: none;
   }
+
+  .labelInput {
+    font-size: 2vmin;
+    color: black;
+  }
+
+  table {
+    font-family: 'Lilita One', cursive;
+    font-weight: bold;
+    border-collapse: collapse;
+    background-color: #FFC025;
+    width: 50%;
+    position: absolute;
+    left: 30%;
+    top: 30%;
+  }
+
+  th, td {
+    border: 1px solid black;
+    text-align: left;
+    padding: 8px;
+    color: black;
+  }
+
 
 }
 
@@ -226,7 +256,7 @@
 
   .statsHeader {
     line-height: 3;
-    color: red;
+    color: #EF1919;
     text-shadow: -2px 2px black;
   }
 
@@ -337,7 +367,7 @@
   .youWin {
     background-color: #fefefe;
     border: 2px solid black;
-    color: red;
+    color: #EF1919;
     width: 25%;
     height: 20%;
     position: absolute;
@@ -417,7 +447,7 @@
 
   .statsHeader {
     line-height: 3;
-    color: red;
+    color: #EF1919;
     text-shadow: -2px 2px black;
   }
 
@@ -510,7 +540,7 @@
   .youWin {
     background-color: #fefefe;
     border: 2px solid black;
-    color: red;
+    color: #EF1919;
     width: 25%;
     height: 20%;
     position: absolute;
@@ -585,7 +615,7 @@
 
   .statsHeader {
     line-height: 3;
-    color: red;
+    color: #EF1919;
     text-shadow: -2px 2px black;
   }
 
@@ -694,7 +724,7 @@
   .youWin {
     background-color: #fefefe;
     border: 2px solid black;
-    color: red;
+    color: #EF1919;
     width: 25%;
     height: 20%;
     position: absolute;
@@ -773,7 +803,7 @@
 
   .statsHeader {
     line-height: 3;
-    color: red;
+    color: #EF1919;
     text-shadow: -2px 2px black;
   }
 
@@ -866,7 +896,7 @@
   .youWin {
     background-color: #fefefe;
     border: 2px solid black;
-    color: red;
+    color: #EF1919;
     width: 25%;
     height: 20%;
     position: absolute;

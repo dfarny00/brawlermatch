@@ -4,16 +4,41 @@ var secondCardClicked = null;
 var firstCardUrl = null;
 var secondCardUrl = null;
 var matches = null;
-var max_matches = 9;
+var max_matches = 1;
 var attempts = 0;
 var games_played = 0;
 var accuracy = 0;
+
 function intializeApp(){
   shuffleCards();
   $(".brawlStars").on("click", handleCardClick);
-  var playAgainButton = $('button');
-  playAgainButton.on('click', resetGame);
+  getScores();
+
 }
+
+function displayScores(res) {
+  for(var scoreCount = 0; scoreCount < res.length; scoreCount++){
+    var tableRow = $("<tr>");
+    var rank = $("<td>").text(res[scoreCount].rank);
+    var name = $("<td>").text(res[scoreCount].name);
+    var attempts = $("<td>").text(res[scoreCount].attempts);
+    var accuracy = $("<td>").text(res[scoreCount].accuracy);
+    tableRow.append(rank, name, attempts, accuracy);
+    $("table").append(tableRow);
+  }
+}
+
+function getScores(){
+  var scoresConfig = {
+    datatype: "json",
+    url: "/api/highScore.php",
+    success: function(response) {
+      displayScores(response);
+    }
+  };
+  $.ajax(scoresConfig);
+}
+
 function handleCardClick(event){
   var clickCurrentTarget = $(event.currentTarget);
   clickCurrentTarget.addClass('hidden');
@@ -35,8 +60,39 @@ function handleCardClick(event){
         $(".brawlStars").off("click", handleCardClick);
         var winningDiv = $('.youWin');
         winningDiv.removeClass('hidden');
+        winningDiv.text("You Won!");
+
+        // var modalButton = $("<button>");
+        // modalButton.attr('id', 'modalButton');
+        // modalButton.text("Play again");
+        // modalButton.on('click', resetGame);
+        // winningDiv.append(modalButton);
+
+        var inputLabel = $("<label>");
+        inputLabel.attr("for", "nameInput");
+        inputLabel.addClass("labelInput");
+        inputLabel.html("<br>" + "Enter your name: ");
+        winningDiv.append(inputLabel);
+
+        var inputForm = $("<input>");
+        inputForm.attr("type", "text");
+        inputForm.attr("id", "nameInput");
+        winningDiv.append(inputForm);
+
+        var inputButton = $("<input>");
+        inputButton.attr("type", "submit");
+        inputButton.attr("id", "nameButton");
+        winningDiv.append(inputButton);
+
+
+
+        var scoreTable = $("<div>");
+        scoreTable.addClass("scores");
+
+
+
         games_played++;
-        playAudio()
+        playAudio();
       }
     } else {
       flipCardsBack();
@@ -44,6 +100,7 @@ function handleCardClick(event){
     displayStats();
   }
 }
+
 function flipCardsBack(){
   setTimeout(function(){
     $(".brawlStars").on("click", handleCardClick);
@@ -53,15 +110,8 @@ function flipCardsBack(){
     secondCardClicked = null;
   }, 1500);
 }
-function createWinningDiv(){
-  var winningDiv = $('<div>');
-  winningDiv.text("You won!!!")
-  var playAgain = $('<button>');
-  playAgain.text('Play again?');
-  $("button").on("click", resetGame);
-  $('body').append(winningDiv);
-}
-function resetGame(event){
+
+function resetGame(){
   shuffleCards();
   $(".brawlStars").on("click", handleCardClick);
   $('.youWin').addClass('hidden');
@@ -71,37 +121,41 @@ function resetGame(event){
   $('.attempts').text("0");
   $('.accuracy').text('0%');
 }
+
 function calculateAccuracy(){
   accuracy = Math.round(100*(matches/attempts));
   return accuracy;
 }
+
 function displayStats(){
   var yourAccuracy = calculateAccuracy();
   $('.accuracy').text(yourAccuracy + '%');
   $('.gamesPlayed').text(games_played);
   $('.attempts').text(attempts);
 }
+
 function shuffleCards(){
   var cardsArray = ['elPrimo', 'nita', 'poco', 'frank', 'barley', 'carl', 'mortis', 'tara', 'elPrimo', 'nita', 'poco', 'frank', 'barley', 'carl', 'mortis', 'tara', 'pam', 'pam'];
   var frontCards = $('.frontCard');
-  var frontCardsAtCardNum;
   var randomNum = 0;
   var roundRandomNum = 0;
   var spliceNum = "";
   for (var cardsArrayNum = 0; cardsArrayNum < 18; cardsArrayNum++) {
     frontCards.removeClass(cardsArray[cardsArrayNum]);
   }
-    $('.frontCard').each(function(cardNum){
+    $('.frontCard').each(function(){
       randomNum = Math.random() * (cardsArray.length - 1);
       roundRandomNum = Math.round(randomNum);
       spliceNum = cardsArray.splice(roundRandomNum, 1);
       $(this).addClass(spliceNum);
     })
 }
+
 function playAudio() {
   var audio = new Audio("assets/sounds/retro-arcade.wav");
   audio.play();
 }
+
 function playAudio2() {
   var audio = new Audio("assets/sounds/clickSound.wav");
   audio.play();
