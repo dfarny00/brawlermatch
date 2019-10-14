@@ -19,7 +19,7 @@ function intializeApp(){
 function displayScores(res) {
   for(var scoreCount = 0; scoreCount < res.length; scoreCount++){
     var tableRow = $("<tr>");
-    var rank = $("<td>").text(scoreCount);
+    var rank = $("<td>").text(res[scoreCount].rank);
     var name = $("<td>").text(res[scoreCount].name);
     var attempts = $("<td>").text(res[scoreCount].attempts);
     var accuracy = $("<td>").text(res[scoreCount].accuracy);
