@@ -146,7 +146,7 @@
   }
 
   .youWin {
-    background-color: #fefefe;
+    background-color: #FFC025;
     border: 2px solid black;
     color: #EF1919;
     width: 35%;
@@ -160,11 +160,23 @@
     padding-top: 10px;
   }
 
-  .youWin > button {
-    background-color: #008CBA;
-    font-size: 16px;
+    .youWin > label {
+    color: #EF1919;
+  }
+
+  #nameButton {
+    background-color: #EF1919;
+    font-size: 14px;
+    color: #FFC025;
+    padding: 4px;
+    font-weight: bold;
+    border-radius: 10%;
+  }
+
+  #nameButton:hover {
+    background-color: rgb(82, 179, 211);
     color: white;
-    padding: 2px;
+    cursor:pointer;
   }
 
   .hidden{
@@ -174,7 +186,6 @@
   .labelInput {
     font-size: 2vmin;
     color: black;
-    /* height: 10%; */
   }
 
   table {
