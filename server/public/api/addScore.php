@@ -5,9 +5,8 @@ set_exception_handler('error_handler');
 startup();
 require_once 'db_connection.php';
 
-$bodyData = getBodyData();
 
-$id = $bodyData['id'];
+
 
 $attempts = 17;
 $accuracy = 53;

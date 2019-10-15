@@ -21,9 +21,9 @@ function displayScores(res) {
     var tableRow = $("<tr>");
     var rank = $("<td>").text(res[scoreCount].rank);
     var name = $("<td>").text(res[scoreCount].name);
-    var attempts = $("<td>").text(res[scoreCount].attempts);
-    var accuracy = $("<td>").text(res[scoreCount].accuracy);
-    tableRow.append(rank, name, attempts, accuracy);
+    var attemptsTd = $("<td>").text(res[scoreCount].attempts);
+    var accuracyTd = $("<td>").text(res[scoreCount].accuracy);
+    tableRow.append(rank, name, attemptsTd, accuracyTd);
     $("table").append(tableRow);
   }
 }
@@ -84,12 +84,10 @@ function handleCardClick(event){
         inputButton.attr("id", "nameButton");
         winningDiv.append(inputButton);
 
-
+        $('#nameButton').on("click", nameSubmit);
 
         var scoreTable = $("<div>");
         scoreTable.addClass("scores");
-
-
 
         games_played++;
         playAudio();
@@ -101,6 +99,14 @@ function handleCardClick(event){
   }
 }
 
+function nameSubmit(event){
+  console.log("button clicked", event);
+  var inputText = $("input:text").val();
+  console.log("inputText", inputText);
+  console.log("attempts: ", attempts);
+  console.log("accuracy: ", calculateAccuracy());
+
+}
 function flipCardsBack(){
   setTimeout(function(){
     $(".brawlStars").on("click", handleCardClick);
