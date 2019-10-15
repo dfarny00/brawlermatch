@@ -5,7 +5,7 @@ set_exception_handler('error_handler');
 startup();
 require_once 'db_connection.php';
 
-$scoreQuery = "SELECT id, rank, name, attempts, accuracy
+$scoreQuery = "SELECT id, name, attempts, accuracy
   FROM `highScore`
   ORDER BY attempts";
 

@@ -12,8 +12,8 @@ $attempts = 17;
 $accuracy = 53;
 
 $insertToTableQuery = "INSERT INTO `highScore`
-  (`rank`, `name`, `attempts`, `accuracy`)
-  VALUES (11, 'work', $attempts, $accuracy)";
+  (`name`, `attempts`, `accuracy`)
+  VALUES ('work', $attempts, $accuracy)";
 
 $insertToTableResult = mysqli_query($conn, $insertToTableQuery);
 
