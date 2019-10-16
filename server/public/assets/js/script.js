@@ -39,6 +39,32 @@ function getScores(){
   $.ajax(scoresConfig);
 }
 
+function addScore(name){
+  var inputText = $("input:text").val();
+  console.log("inputText", inputText);
+  console.log("attempts: ", attempts);
+  var tempAccuracy = calculateAccuracy();
+  console.log("accuracy: ", tempAccuracy);
+
+  var newScore = {
+    name: name,
+    attempts: attempts,
+    accuracy: tempAccuracy
+  }
+  var stringScore = JSON.stringify(newScore);
+  console.log("newScore: ", newScore);
+
+  var addScoreConfig = {
+    type: "POST",
+    datatype: "json",
+    data: stringScore,
+    url: "/api/addScore.php",
+    success: function(res) { console.log("inserted: ", res)}
+  };
+
+  $.ajax(addScoreConfig);
+}
+
 function handleCardClick(event){
   var clickCurrentTarget = $(event.currentTarget);
   clickCurrentTarget.addClass('hidden');
@@ -62,6 +88,8 @@ function handleCardClick(event){
         winningDiv.removeClass('hidden');
         winningDiv.text("You Won!");
 
+
+        // game reset button
         // var modalButton = $("<button>");
         // modalButton.attr('id', 'modalButton');
         // modalButton.text("Play again");
@@ -102,9 +130,7 @@ function handleCardClick(event){
 function nameSubmit(event){
   console.log("button clicked", event);
   var inputText = $("input:text").val();
-  console.log("inputText", inputText);
-  console.log("attempts: ", attempts);
-  console.log("accuracy: ", calculateAccuracy());
+  addScore(inputText);
 
 }
 function flipCardsBack(){
