@@ -1,14 +1,12 @@
 [
   {
     "id": 1,
-    "rank": 1,
     "name": "Frank",
     "attemps": 16,
     "accuracy": 54
   },
   {
     "id": 2,
-    "rank": 2,
     "name": "Piper",
     "attemps": 15,
     "accuracy": 60

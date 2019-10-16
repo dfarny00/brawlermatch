@@ -194,18 +194,56 @@
     border-collapse: collapse;
     background-color: #FFC025;
     width: 50%;
+    height: 50%;
     position: absolute;
-    left: 30%;
-    top: 30%;
+    left: 29%;
+    top: 20%;
+  }
+
+  tbody{
+    display: block;
+    overflow: scroll;
+    height: 65vh;
+    width: 100%;
+  }
+  caption {
+    background-color: #FFC025;
+    text-align: center;
+    padding: 8px;
+    font-size: 2rem;
+    color: black;
   }
 
   th, td {
     border: 1px solid black;
     text-align: left;
+    width: 100%;
     padding: 8px;
+    font-size: 2rem;
     color: black;
   }
 
+  #modalButton {
+    background-color: #EF1919;
+    border: 2px solid black;
+    font-weight: bold;
+    color: #FFC025;
+    width: 10%;
+    height: 5%;
+    position: absolute;
+    left: 49%;
+    top: 92%;
+    font-size: 2vmin;
+    border-radius: 25px;
+    text-align: center;
+    padding-top: 2px;
+  }
+
+  #modalButton:hover {
+    background-color: #FFC025;
+    color: #EF1919;
+    cursor:pointer;
+  }
 
 }
 

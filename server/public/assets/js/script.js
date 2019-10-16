@@ -12,20 +12,26 @@ var accuracy = 0;
 function intializeApp(){
   shuffleCards();
   $(".brawlStars").on("click", handleCardClick);
-  getScores();
 
 }
 
 function displayScores(res) {
   for(var scoreCount = 0; scoreCount < res.length; scoreCount++){
     var tableRow = $("<tr>");
-    var rank = $("<td>").text(res[scoreCount].rank);
+    var rank = $("<td>").text(scoreCount+1);
     var name = $("<td>").text(res[scoreCount].name);
-    var attempts = $("<td>").text(res[scoreCount].attempts);
-    var accuracy = $("<td>").text(res[scoreCount].accuracy);
-    tableRow.append(rank, name, attempts, accuracy);
+    var attemptsTd = $("<td>").text(res[scoreCount].attempts);
+    var accuracyTd = $("<td>").text(res[scoreCount].accuracy);
+    tableRow.append(rank, name, attemptsTd, accuracyTd);
     $("table").append(tableRow);
   }
+
+  //       // game reset button
+  var modalButton = $("<button>");
+  modalButton.attr('id', 'modalButton');
+  modalButton.text("Play again");
+  modalButton.on('click', resetGame);
+  $("body").append(modalButton);
 }
 
 function getScores(){
@@ -37,6 +43,27 @@ function getScores(){
     }
   };
   $.ajax(scoresConfig);
+}
+
+function addScore(name){
+  var inputText = $("input:text").val();
+  var tempAccuracy = calculateAccuracy();
+
+  var newScore = {
+    name: name,
+    attempts: attempts,
+    accuracy: tempAccuracy
+  }
+  var stringScore = JSON.stringify(newScore);
+
+  var addScoreConfig = {
+    type: "POST",
+    datatype: "json",
+    data: stringScore,
+    url: "/api/addScore.php"
+  };
+
+  $.ajax(addScoreConfig);
 }
 
 function handleCardClick(event){
@@ -62,6 +89,8 @@ function handleCardClick(event){
         winningDiv.removeClass('hidden');
         winningDiv.text("You Won!");
 
+
+        // game reset button
         // var modalButton = $("<button>");
         // modalButton.attr('id', 'modalButton');
         // modalButton.text("Play again");
@@ -84,12 +113,10 @@ function handleCardClick(event){
         inputButton.attr("id", "nameButton");
         winningDiv.append(inputButton);
 
-
+        $('#nameButton').on("click", nameSubmit);
 
         var scoreTable = $("<div>");
         scoreTable.addClass("scores");
-
-
 
         games_played++;
         playAudio();
@@ -99,6 +126,15 @@ function handleCardClick(event){
     }
     displayStats();
   }
+}
+
+function nameSubmit(){
+  var inputText = $("input:text").val();
+  addScore(inputText);
+  getScores();
+  $("youWin").addClass("hidden");
+  $("table").removeClass("hidden");
+
 }
 
 function flipCardsBack(){
@@ -115,7 +151,10 @@ function resetGame(){
   shuffleCards();
   $(".brawlStars").on("click", handleCardClick);
   $('.youWin').addClass('hidden');
+  $('#modalButton').addClass('hidden');
+  $('table').addClass('hidden');
   $('.brawlStars').removeClass('hidden');
+
   matches = null;
   attempts = 0;
   $('.attempts').text("0");
