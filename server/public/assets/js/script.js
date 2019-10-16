@@ -26,6 +26,12 @@ function displayScores(res) {
     $("table").append(tableRow);
   }
 
+  //       // game reset button
+  // var modalButton = $("<button>");
+  // modalButton.attr('id', 'modalButton');
+  // modalButton.text("Play again");
+  // modalButton.on('click', resetGame);
+  // $(".header").append(modalButton);
 }
 
 function getScores(){
