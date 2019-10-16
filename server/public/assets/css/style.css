@@ -209,7 +209,6 @@
   caption {
     background-color: #FFC025;
     text-align: center;
-
     padding: 8px;
     font-size: 2rem;
     color: black;
@@ -224,6 +223,27 @@
     color: black;
   }
 
+  #modalButton {
+    background-color: #EF1919;
+    border: 2px solid black;
+    font-weight: bold;
+    color: #FFC025;
+    width: 10%;
+    height: 5%;
+    position: absolute;
+    left: 49%;
+    top: 92%;
+    font-size: 2vmin;
+    border-radius: 25px;
+    text-align: center;
+    padding-top: 2px;
+  }
+
+  #modalButton:hover {
+    background-color: #FFC025;
+    color: #EF1919;
+    cursor:pointer;
+  }
 
 }
 

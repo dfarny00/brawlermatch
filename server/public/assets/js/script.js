@@ -27,11 +27,11 @@ function displayScores(res) {
   }
 
   //       // game reset button
-  // var modalButton = $("<button>");
-  // modalButton.attr('id', 'modalButton');
-  // modalButton.text("Play again");
-  // modalButton.on('click', resetGame);
-  // $(".header").append(modalButton);
+  var modalButton = $("<button>");
+  modalButton.attr('id', 'modalButton');
+  modalButton.text("Play again");
+  modalButton.on('click', resetGame);
+  $("body").append(modalButton);
 }
 
 function getScores(){
@@ -151,7 +151,10 @@ function resetGame(){
   shuffleCards();
   $(".brawlStars").on("click", handleCardClick);
   $('.youWin').addClass('hidden');
+  $('#modalButton').addClass('hidden');
+  $('table').addClass('hidden');
   $('.brawlStars').removeClass('hidden');
+
   matches = null;
   attempts = 0;
   $('.attempts').text("0");
