@@ -194,14 +194,22 @@
     border-collapse: collapse;
     background-color: #FFC025;
     width: 50%;
+    height: 50%;
     position: absolute;
     left: 29%;
-    top: 30%;
+    top: 20%;
   }
 
+  tbody{
+    display: block;
+    overflow: scroll;
+    height: 65vh;
+    width: 100%;
+  }
   caption {
     background-color: #FFC025;
     text-align: center;
+
     padding: 8px;
     font-size: 2rem;
     color: black;
@@ -210,6 +218,7 @@
   th, td {
     border: 1px solid black;
     text-align: left;
+    width: 100%;
     padding: 8px;
     font-size: 2rem;
     color: black;

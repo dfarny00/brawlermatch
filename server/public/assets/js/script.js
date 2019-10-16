@@ -12,7 +12,6 @@ var accuracy = 0;
 function intializeApp(){
   shuffleCards();
   $(".brawlStars").on("click", handleCardClick);
-  getScores();
 
 }
 
@@ -26,6 +25,7 @@ function displayScores(res) {
     tableRow.append(rank, name, attemptsTd, accuracyTd);
     $("table").append(tableRow);
   }
+
 }
 
 function getScores(){
@@ -41,10 +41,7 @@ function getScores(){
 
 function addScore(name){
   var inputText = $("input:text").val();
-  console.log("inputText", inputText);
-  console.log("attempts: ", attempts);
   var tempAccuracy = calculateAccuracy();
-  console.log("accuracy: ", tempAccuracy);
 
   var newScore = {
     name: name,
@@ -52,14 +49,12 @@ function addScore(name){
     accuracy: tempAccuracy
   }
   var stringScore = JSON.stringify(newScore);
-  console.log("newScore: ", newScore);
 
   var addScoreConfig = {
     type: "POST",
     datatype: "json",
     data: stringScore,
-    url: "/api/addScore.php",
-    success: function(res) { console.log("inserted: ", res)}
+    url: "/api/addScore.php"
   };
 
   $.ajax(addScoreConfig);
@@ -127,12 +122,15 @@ function handleCardClick(event){
   }
 }
 
-function nameSubmit(event){
-  console.log("button clicked", event);
+function nameSubmit(){
   var inputText = $("input:text").val();
   addScore(inputText);
+  getScores();
+  $("youWin").addClass("hidden");
+  $("table").removeClass("hidden");
 
 }
+
 function flipCardsBack(){
   setTimeout(function(){
     $(".brawlStars").on("click", handleCardClick);
