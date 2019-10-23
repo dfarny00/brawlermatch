@@ -63,7 +63,8 @@ function addScore(name){
     url: "/api/addScore.php"
   };
 
-  $.ajax(addScoreConfig);
+  $.ajax(addScoreConfig)
+    .done(() => getScores());
 }
 
 function handleCardClick(event){
@@ -131,7 +132,7 @@ function handleCardClick(event){
 function nameSubmit(){
   var inputText = $("input:text").val();
   addScore(inputText);
-  getScores();
+  // getScores();
   $("youWin").addClass("hidden");
   $("table").removeClass("hidden");
 
