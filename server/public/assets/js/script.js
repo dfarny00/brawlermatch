@@ -33,6 +33,7 @@ function displayScores(res) {
   }
 
   //       // game reset button
+  $("#modalButton").remove();
   var modalButton = $("<button>");
   modalButton.attr('id', 'modalButton');
   modalButton.text("Play again");
