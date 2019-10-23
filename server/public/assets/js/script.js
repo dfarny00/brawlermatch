@@ -16,12 +16,18 @@ function intializeApp(){
 }
 
 function displayScores(res) {
+  $(".tabularData").remove();
   for(var scoreCount = 0; scoreCount < res.length; scoreCount++){
     var tableRow = $("<tr>");
+    tableRow.addClass("tabularData");
     var rank = $("<td>").text(scoreCount+1);
+    rank.addClass("tabularData");
     var name = $("<td>").text(res[scoreCount].name);
+    name.addClass("tabularData");
     var attemptsTd = $("<td>").text(res[scoreCount].attempts);
+    attemptsTd.addClass("tabularData");
     var accuracyTd = $("<td>").text(res[scoreCount].accuracy);
+    accuracyTd.addClass("tabularData");
     tableRow.append(rank, name, attemptsTd, accuracyTd);
     $("table").append(tableRow);
   }
