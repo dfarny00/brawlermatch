@@ -158,6 +158,7 @@ function flipCardsBack(){
 
 function resetGame(){
   shuffleCards();
+  $(".brawlStars").off("click", handleCardClick);
   $(".brawlStars").on("click", handleCardClick);
   $('.youWin').addClass('hidden');
   $('#modalButton').addClass('hidden');
