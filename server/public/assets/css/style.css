@@ -64,6 +64,12 @@
     border-radius: 5px;
   }
 
+  #resetButton:hover{
+    background-color: #FFC025;
+    color: #EF1919;
+    cursor:pointer;
+  }
+
   main {
     height: 80vmin;
     width: 200vmin;
