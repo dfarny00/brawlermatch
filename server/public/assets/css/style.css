@@ -211,11 +211,15 @@
   }
 
   table {
+   border-collapse: collapse;
+    /* border-radius: 1em; */
+    border-bottom-left-radius: 1em;
+    border-bottom-right-radius: 1em;
+    overflow: hidden;
     font-family: 'Lilita One', cursive;
     font-weight: bold;
-    border-collapse: collapse;
     background-color: #FFC025;
-    width: 50%;
+    width: 40%;
     height: 50%;
     position: absolute;
     left: 29%;
@@ -223,11 +227,13 @@
   }
 
   tbody{
-    display: block;
-    height: 40vh;
+    height: 50vh;
     width: 100%;
   }
   caption {
+    border: 1px solid black;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
     background-color: #FFC025;
     text-align: center;
     padding: 8px;
