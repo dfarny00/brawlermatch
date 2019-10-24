@@ -7,7 +7,8 @@ require_once 'db_connection.php';
 
 $scoreQuery = "SELECT id, name, attempts, accuracy
   FROM `highScore`
-  ORDER BY attempts";
+  ORDER BY attempts
+  LIMIT 5";
 
 $scoreResult = mysqli_query($conn, $scoreQuery);
 
