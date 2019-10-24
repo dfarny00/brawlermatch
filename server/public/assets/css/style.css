@@ -467,13 +467,6 @@
     border-radius: 10%;
   }
 
-  .youWin > button {
-    background-color: #008CBA;
-    font-size: 16px;
-    color: white;
-    padding: 2px;
-  }
-
   .hidden{
     display: none;
   }
@@ -571,6 +564,7 @@
     display: flex;
     margin-bottom: 5vh;
   }
+
     main {
     height: 80vh;
     width: 100vw;
@@ -586,7 +580,7 @@
     text-align: center;
     width: 80vw;
     height: 3vh;
-    margin: 1%;
+    margin: .5%;
     padding-top: 1.5%;
     color: white;
     border-radius: 5px;
@@ -603,6 +597,22 @@
     background-color: rgb(82, 179, 211);
   }
 
+ #resetButton {
+    border: 2px solid black;
+    background-color: #EF1919;
+    font-weight: bold;
+    font-size: 2.2vmin;
+    font-family: 'Lilita One', cursive;
+    text-align: center;
+    width: 36%;
+    height: 3vh;
+    margin-left: .5%;
+    margin-top: 1.2vh;
+    padding-top: .3%;
+    color: white;
+    border-radius: 5px;
+  }
+
   .containerForAsideAndMain {
     width: 100vw;
   }
@@ -617,7 +627,7 @@
     background-size: contain;
     background-repeat: no-repeat;
     border-radius: 10px;
-    height: 90%;
+    height: 88%;
     width: 47%;
     top: 5%;
     left: 25.3%;
@@ -684,14 +694,14 @@
     background-image: url("../images/tara.png");
   }
 
-  .youWin {
-    background-color: #fefefe;
+.youWin {
+    background-color: #FFC025;
     border: 2px solid black;
     color: #EF1919;
-    width: 25%;
-    height: 20%;
+    width: 47%;
+    height: 14%;
     position: absolute;
-    left: 30%;
+    left: 26%;
     top: 30%;
     font-size: 6vmin;
     border-radius: 25px;
@@ -699,16 +709,83 @@
     padding-top: 10px;
   }
 
-  .youWin > button {
-    background-color: #008CBA;
-    font-size: 16px;
-    color: white;
-    padding: 2px;
+    .youWin > label {
+    color: #EF1919;
+  }
+
+  #nameButton {
+    background-color: #EF1919;
+    font-size: 14px;
+    color: #FFC025;
+    padding: 4px;
+    font-weight: bold;
+    border-radius: 10%;
   }
 
   .hidden{
     display: none;
   }
+
+
+  .labelInput {
+    font-size: 2vmin;
+    color: black;
+  }
+
+  table {
+    table-layout:fixed;
+    border-collapse: collapse;
+    overflow: hidden;
+    font-family: 'Lilita One', cursive;
+    font-weight: bold;
+    background-color: #FFC025;
+    width: 76%;
+    height: 45%;
+    position: absolute;
+    left: 12%;
+    top: 23%;
+  }
+
+  tbody{
+    height: 50vh;
+    width: 100%;
+  }
+  caption {
+    border: 4px solid black;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    background-color: #FFC025;
+    text-align: center;
+    padding: 2%;
+    font-size: 2rem;
+    color: black;
+  }
+
+  th, td {
+    border: 4px solid black;
+    text-align: left;
+    width: 100%;
+    padding: 8px;
+    font-size: 2rem;
+    color: black;
+  }
+
+  #modalButton {
+    background-color: #EF1919;
+    border: 2px solid black;
+    font-weight: bold;
+    color: #FFC025;
+    width: 14%;
+    height: 4%;
+    position: absolute;
+    left: 72%;
+    top: 25%;
+    font-size: 2vmin;
+    border-radius: 7px;
+    text-align: center;
+    padding-top: 2px;
+  }
+
 
 }
 
