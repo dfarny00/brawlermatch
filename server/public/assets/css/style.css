@@ -273,8 +273,7 @@
 }
 
 /* ipad landscape */
-@media only screen and  (min-width: 769px) and (max-width: 1024px)
- {
+@media only screen and  (min-width: 769px) and (max-width: 1024px) {
 
   body{
     background-image: url(../images/brawlStarsBackgroundImage3.jpg);
@@ -312,7 +311,7 @@
     width: 98%;
     height: 5vh;
     margin-left: 5px;
-    margin-top: 36px;
+    margin-top: 30px;
     padding-top: 16%;
     color: white;
     border-radius: 5px;
@@ -327,6 +326,22 @@
   .statsContent {
     border: 2px solid black;
     background-color: rgb(82, 179, 211);
+  }
+
+ #resetButton {
+    border: 2px solid black;
+    background-color: #EF1919;
+    font-weight: bold;
+    font-size: 2.2vmin;
+    font-family: 'Lilita One', cursive;
+    text-align: center;
+    width: 70%;
+    height: 5vh;
+    margin-left: 22px;
+    margin-top: 25px;
+    padding-top: 3%;
+    color: white;
+    border-radius: 5px;
   }
 
   main {
@@ -428,11 +443,11 @@
     background-image: url("../images/tara.png");
   }
 
-  .youWin {
-    background-color: #fefefe;
+.youWin {
+    background-color: #FFC025;
     border: 2px solid black;
     color: #EF1919;
-    width: 25%;
+    width: 42%;
     height: 20%;
     position: absolute;
     left: 30%;
@@ -441,6 +456,19 @@
     border-radius: 25px;
     text-align: center;
     padding-top: 10px;
+  }
+
+    .youWin > label {
+    color: #EF1919;
+  }
+
+  #nameButton {
+    background-color: #EF1919;
+    font-size: 14px;
+    color: #FFC025;
+    padding: 4px;
+    font-weight: bold;
+    border-radius: 10%;
   }
 
   .youWin > button {
@@ -452,6 +480,65 @@
 
   .hidden{
     display: none;
+  }
+
+  .labelInput {
+    font-size: 2vmin;
+    color: black;
+  }
+
+  table {
+    table-layout:fixed;
+    border-collapse: collapse;
+    overflow: hidden;
+    font-family: 'Lilita One', cursive;
+    font-weight: bold;
+    background-color: #FFC025;
+    width: 64%;
+    height: 50%;
+    position: absolute;
+    left: 24%;
+    top: 23%;
+  }
+
+  tbody{
+    height: 50vh;
+    width: 100%;
+  }
+  caption {
+    border: 4px solid black;
+    border-top-left-radius: 1em;
+    border-top-right-radius: 1em;
+    background-color: #FFC025;
+    text-align: center;
+    padding: 2%;
+    font-size: 2rem;
+    color: black;
+  }
+
+  th, td {
+    border: 4px solid black;
+    text-align: left;
+    width: 100%;
+    padding: 8px;
+    font-size: 2rem;
+    color: black;
+  }
+
+  #modalButton {
+    background-color: #EF1919;
+    border: 2px solid black;
+    font-weight: bold;
+    color: #FFC025;
+    width: 10%;
+    height: 5%;
+    position: absolute;
+    left: 75%;
+    top: 26%;
+    font-size: 2vmin;
+    border-radius: 7px;
+    text-align: center;
+    padding-top: 2px;
   }
 
 }
@@ -630,7 +717,7 @@
 }
 
 /* iphone 6/7/8 landscape */
-@media only screen and  (min-width: 601px) and (max-width: 700px){
+@media only screen and  (min-width: 601px) and (max-width: 700px) {
 
   body{
     background-image: url(../images/brawlStarsBackgroundImage3.jpg);
@@ -814,7 +901,7 @@
 }
 
 /* iphone 6/7/8 portait */
-@media only screen and  (min-width: 0px) and (max-width: 600px){
+@media only screen and  (min-width: 0px) and (max-width: 600px) {
   body{
     background-image: url(../images/brawlStarsBackgroundImage3.jpg);
     background-repeat: no-repeat;
