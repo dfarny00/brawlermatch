@@ -12,7 +12,7 @@ var accuracy = 0;
 function intializeApp(){
   shuffleCards();
   $(".brawlStars").on("click", handleCardClick);
-
+  resetButton();
 }
 
 function displayScores(res) {
@@ -50,6 +50,15 @@ function getScores(){
     }
   };
   $.ajax(scoresConfig);
+}
+
+function resetButton(){
+  var resetButton = $("<button>");
+  resetButton.attr('id', 'resetButton');
+  resetButton.text("Reset");
+  resetButton.addClass("statsContent")
+  resetButton.on('click', resetGame);
+  $(".aside").append(resetButton);
 }
 
 function addScore(name){
@@ -96,14 +105,6 @@ function handleCardClick(event){
         var winningDiv = $('.youWin');
         winningDiv.removeClass('hidden');
         winningDiv.text("You Won!");
-
-
-        // game reset button
-        // var modalButton = $("<button>");
-        // modalButton.attr('id', 'modalButton');
-        // modalButton.text("Play again");
-        // modalButton.on('click', resetGame);
-        // winningDiv.append(modalButton);
 
         var inputLabel = $("<label>");
         inputLabel.attr("for", "nameInput");
@@ -157,6 +158,7 @@ function flipCardsBack(){
 
 function resetGame(){
   shuffleCards();
+  $(".brawlStars").off("click", handleCardClick);
   $(".brawlStars").on("click", handleCardClick);
   $('.youWin').addClass('hidden');
   $('#modalButton').addClass('hidden');
