@@ -171,10 +171,10 @@
     background-color: #FFC025;
     border: 2px solid black;
     color: #EF1919;
-    width: 35%;
+    width: 28%;
     height: 20%;
     position: absolute;
-    left: 30%;
+    left: 34%;
     top: 30%;
     font-size: 6vmin;
     border-radius: 25px;
@@ -217,10 +217,10 @@
     font-family: 'Lilita One', cursive;
     font-weight: bold;
     background-color: #FFC025;
-    width: 50%;
+    width: 48%;
     height: 50%;
     position: absolute;
-    left: 29%;
+    left: 32%;
     top: 20%;
   }
 
@@ -256,7 +256,7 @@
     width: 10%;
     height: 5%;
     position: absolute;
-    left: 67%;
+    left: 68%;
     top: 22%;
     font-size: 2vmin;
     border-radius: 5px;
