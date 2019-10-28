@@ -140,7 +140,6 @@ function handleCardClick(event){
 function nameSubmit(){
   var inputText = $("input:text").val();
   addScore(inputText);
-  // getScores();
   $("youWin").addClass("hidden");
   $("table").removeClass("hidden");
 
@@ -158,6 +157,9 @@ function flipCardsBack(){
 
 function resetGame(){
   shuffleCards();
+  firstCardClicked = null;
+  secondCardClicked = null;
+  clickCurrentTarget = null;
   $(".brawlStars").off("click", handleCardClick);
   $(".brawlStars").on("click", handleCardClick);
   $('.youWin').addClass('hidden');
