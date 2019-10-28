@@ -24,11 +24,9 @@ function displayScores(res) {
     rank.addClass("tabularData");
     var name = $("<td>").text(res[scoreCount].name);
     name.addClass("tabularData");
-    var attemptsTd = $("<td>").text(res[scoreCount].attempts);
-    attemptsTd.addClass("tabularData");
-    var accuracyTd = $("<td>").text(res[scoreCount].accuracy);
+    var accuracyTd = $("<td>").text((res[scoreCount].accuracy) + "%");
     accuracyTd.addClass("tabularData");
-    tableRow.append(rank, name, attemptsTd, accuracyTd);
+    tableRow.append(rank, name, accuracyTd);
     $("table").append(tableRow);
   }
 
