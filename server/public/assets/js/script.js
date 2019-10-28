@@ -41,6 +41,7 @@ function displayScores(res) {
   $("body").append(modalButton);
 }
 
+//get highscores
 function getScores(){
   var scoresConfig = {
     datatype: "json",
@@ -52,6 +53,7 @@ function getScores(){
   $.ajax(scoresConfig);
 }
 
+//render button
 function resetButton(){
   var resetButton = $("<button>");
   resetButton.attr('id', 'resetButton');
