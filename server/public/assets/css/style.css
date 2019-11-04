@@ -272,7 +272,6 @@
 
   .brawlStars:hover{
     cursor: pointer;
-    /* margin-right: 30%; */
     color: aliceblue;
     font-size: 24px;
 }
@@ -606,6 +605,7 @@
   .statsContent {
     border: 2px solid black;
     background-color: rgb(82, 179, 211);
+    padding-bottom: 1%;
   }
 
  #resetButton {
@@ -616,10 +616,10 @@
     font-family: 'Lilita One', cursive;
     text-align: center;
     width: 36%;
-    height: 3vh;
+    height: 4vh;
     margin-left: .5%;
     margin-top: 1.2vh;
-    padding-top: .3%;
+    padding-top: .5%;
     color: white;
     border-radius: 5px;
   }
@@ -1129,6 +1129,7 @@
   .statsContent {
     border: 2px solid black;
     background-color: rgb(82, 179, 211);
+    padding-bottom: 2%;
   }
 
  #resetButton {
@@ -1139,7 +1140,7 @@
     font-family: 'Lilita One', cursive;
     text-align: center;
     width: 36%;
-    height: 3vh;
+    height: 3.5vh;
     margin-left: .5%;
     margin-top: 1.2vh;
     padding-top: .3%;
