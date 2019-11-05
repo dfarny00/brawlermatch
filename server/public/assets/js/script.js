@@ -4,7 +4,7 @@ var secondCardClicked = null;
 var firstCardUrl = null;
 var secondCardUrl = null;
 var matches = null;
-var max_matches = 9;
+var max_matches = 1;
 var attempts = 0;
 var games_played = 0;
 var accuracy = 0;
@@ -81,6 +81,7 @@ function addScore(name){
 
   $.ajax(addScoreConfig)
     .done(() => getScores());
+  $('.youWin').addClass('hidden');
 }
 
 function handleCardClick(event){
@@ -109,7 +110,7 @@ function handleCardClick(event){
         var inputLabel = $("<label>");
         inputLabel.attr("for", "nameInput");
         inputLabel.addClass("labelInput");
-        inputLabel.html("<br>" + "Enter your name: ");
+        inputLabel.html("<br>" + "Enter name: ");
         winningDiv.append(inputLabel);
 
         var inputForm = $("<input>");
@@ -162,7 +163,7 @@ function resetGame(){
   clickCurrentTarget = null;
   $(".brawlStars").off("click", handleCardClick);
   $(".brawlStars").on("click", handleCardClick);
-  $('.youWin').addClass('hidden');
+
   $('#modalButton').addClass('hidden');
   $('table').addClass('hidden');
   $('.brawlStars').removeClass('hidden');
