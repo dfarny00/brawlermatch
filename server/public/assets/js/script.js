@@ -64,11 +64,13 @@ function resetButton(){
 function addScore(name){
   var inputText = $("input:text").val();
   var tempAccuracy = calculateAccuracy();
+  var dateOffset = new Date().getTimezoneOffset();
+  console.log(dateOffset);
 
   var newScore = {
     name: name,
-    attempts: attempts,
-    accuracy: tempAccuracy
+    accuracy: tempAccuracy,
+    dateOffset: dateOffset
   }
   var stringScore = JSON.stringify(newScore);
 
@@ -81,6 +83,7 @@ function addScore(name){
 
   $.ajax(addScoreConfig)
     .done(() => getScores());
+  $('.youWin').addClass('hidden');
 }
 
 function handleCardClick(event){
@@ -109,7 +112,7 @@ function handleCardClick(event){
         var inputLabel = $("<label>");
         inputLabel.attr("for", "nameInput");
         inputLabel.addClass("labelInput");
-        inputLabel.html("<br>" + "Enter your name: ");
+        inputLabel.html("<br>" + "Enter name: ");
         winningDiv.append(inputLabel);
 
         var inputForm = $("<input>");
@@ -162,7 +165,7 @@ function resetGame(){
   clickCurrentTarget = null;
   $(".brawlStars").off("click", handleCardClick);
   $(".brawlStars").on("click", handleCardClick);
-  $('.youWin').addClass('hidden');
+
   $('#modalButton').addClass('hidden');
   $('table').addClass('hidden');
   $('.brawlStars').removeClass('hidden');
