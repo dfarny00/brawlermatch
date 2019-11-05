@@ -41,9 +41,13 @@ function displayScores(res) {
 
 //get highscores
 function getScores(){
+  var dateOffset = new Date().getTimezoneOffset();
   var scoresConfig = {
     datatype: "json",
     url: "/api/highScore.php",
+    data: {
+      dateOffset: dateOffset
+    },
     success: function(response) {
       displayScores(response);
     }
@@ -65,7 +69,6 @@ function addScore(name){
   var inputText = $("input:text").val();
   var tempAccuracy = calculateAccuracy();
   var dateOffset = new Date().getTimezoneOffset();
-  console.log(dateOffset);
 
   var newScore = {
     name: name,

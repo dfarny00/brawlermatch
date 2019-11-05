@@ -501,7 +501,7 @@
     font-weight: bold;
     background-color: #FFC025;
     width: 64%;
-    height: 50%;
+    /* height: 50%; */
     position: absolute;
     left: 24%;
     top: 23%;
@@ -520,6 +520,11 @@
     padding: 2%;
     font-size: 2rem;
     color: black;
+  }
+
+
+    #nameInput{
+    width: 30%;
   }
 
   th, td {
@@ -758,10 +763,14 @@
     font-weight: bold;
     background-color: #FFC025;
     width: 76%;
-    height: 45%;
+    /* height: 45%; */
     position: absolute;
     left: 12%;
     top: 23%;
+  }
+
+  #nameInput{
+    width: 30%;
   }
 
   tbody{
@@ -1026,10 +1035,14 @@
     font-weight: bold;
     background-color: #FFC025;
     width: 58%;
-    height: 66%;
+    /* height: 66%; */
     position: absolute;
     left: 26%;
     top: 13%;
+  }
+
+  #nameInput{
+    width: 30%;
   }
 
   tbody{
@@ -1283,10 +1296,14 @@
     font-weight: bold;
     background-color: #FFC025;
     width: 86%;
-    height: 40%;
+    /* height: 40%; */
     position: absolute;
     left: 7%;
     top: 23%;
+  }
+
+  #nameInput{
+    width: 30%;
   }
 
   tbody{
