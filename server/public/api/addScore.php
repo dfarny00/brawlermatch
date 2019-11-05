@@ -8,13 +8,17 @@ $bodyData = file_get_contents('php://input');
 $obj = json_decode($bodyData);
 $resultArray = (array) $obj;
 
+
+
 $name = $resultArray['name'];
-$attempts = $resultArray['attempts'];
 $accuracy = $resultArray['accuracy'];
+$dateOffset = $resultArray['dateOffset'];
+
+var_dump("dateOffset:", $dateOffset);
 
 $insertToTableQuery = "INSERT INTO `highScore`
-  (`name`, `attempts`, `accuracy`)
-  VALUES ('$name', $attempts, $accuracy)";
+  (`name`, `accuracy`)
+  VALUES ('$name', $accuracy)";
 
 $insertToTableResult = mysqli_query($conn, $insertToTableQuery);
 
