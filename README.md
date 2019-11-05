@@ -2,7 +2,7 @@ Brawler Match
 
 [Live Site](https://brawlermatch.jasethomson.com/)
 
-Brawler Match is a memory matching card game. Try flipping two cards, if they are not the same the cards will flip back. Your goal, should you choose to accept it, is to match all 9 pairs of cards in as few attempts as possible. If you are lucky you might make it onto the daily Top 5 leaderboard.
+Brawler Match is a memory matching card game. Try flipping two cards, if they are not the same, the cards will flip back. Your goal, should you choose to accept it, is to match all nine pairs of cards in as few attempts as possible. If you are lucky you might make it on the daily Top 5 leaderboard.
 
 Project Tech Stack:
 -JavaScript
