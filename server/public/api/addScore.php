@@ -8,8 +8,13 @@ $bodyData = file_get_contents('php://input');
 $obj = json_decode($bodyData);
 $resultArray = (array) $obj;
 
+
+
 $name = $resultArray['name'];
 $accuracy = $resultArray['accuracy'];
+$dateOffset = $resultArray['dateOffset'];
+
+var_dump("dateOffset:", $dateOffset);
 
 $insertToTableQuery = "INSERT INTO `highScore`
   (`name`, `accuracy`)

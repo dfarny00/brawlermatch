@@ -64,11 +64,13 @@ function resetButton(){
 function addScore(name){
   var inputText = $("input:text").val();
   var tempAccuracy = calculateAccuracy();
+  var dateOffset = new Date().getTimezoneOffset();
+  console.log(dateOffset);
 
   var newScore = {
     name: name,
-    attempts: attempts,
-    accuracy: tempAccuracy
+    accuracy: tempAccuracy,
+    dateOffset: dateOffset
   }
   var stringScore = JSON.stringify(newScore);
 
