@@ -23,11 +23,11 @@ Brawler Match is a memory matching card game. Try flipping two cards, if they ar
     - Select your Github user name to complete the fork
 
 2. Clone this repository in your terminal
-    - `git clone https://github.com/jsaethomson/brawlermatch.git`
+    - `git clone https://github.com/jasethomson/brawlermatch.git`
 
 3. Navigate into the `/brawlermatch` directory
     - `Open the index.html file and enjoy!`
 
 ### Contributions
 
-I am always looking to improve my applications, feel free to submit pull requests and to reach out with suggestions, my email address is [jasethomson31@gmail.com](mailto:jasethomson31@gmail.com).
+I am always looking to improve my applications, feel free to submit pull requests and reach out with suggestions, my email address is [jasethomson31@gmail.com](mailto:jasethomson31@gmail.com).
