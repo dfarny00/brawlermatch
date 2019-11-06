@@ -8,6 +8,7 @@ var max_matches = 9;
 var attempts = 0;
 var games_played = 0;
 var accuracy = 0;
+var fixedWin = false;
 
 function intializeApp(){
   shuffleCards();
@@ -101,12 +102,12 @@ function handleCardClick(event){
     secondCardUrl = $(secondCardClicked).siblings().css("background-image");
     $(".brawlStars").off("click", handleCardClick);
     attempts++;
-    if (firstCardUrl === secondCardUrl){
+    if (firstCardUrl === secondCardUrl || fixedWin === true){
       matches++;
       firstCardClicked = null;
       secondCardClicked = null;
       $(".brawlStars").on("click", handleCardClick);
-      if(max_matches === matches){
+      if(max_matches === matches || fixedWin === true){
         $(".brawlStars").off("click", handleCardClick);
         var winningDiv = $('.youWin');
         winningDiv.removeClass('hidden');
@@ -121,7 +122,16 @@ function handleCardClick(event){
         var inputForm = $("<input>");
         inputForm.attr("type", "text");
         inputForm.attr("id", "nameInput");
+
         winningDiv.append(inputForm);
+
+        inputForm.keydown(function (event) {
+          if (event.which === 13) {
+            console.log(event.which);
+            inputForm.submit(() => nameSubmit);
+            return false;
+          }
+        });
 
         var inputButton = $("<input>");
         inputButton.attr("type", "submit");
@@ -177,6 +187,7 @@ function resetGame(){
   attempts = 0;
   $('.attempts').text("0");
   $('.accuracy').text('0%');
+  fixedWin = false;
 }
 
 function calculateAccuracy(){
@@ -216,4 +227,8 @@ function playAudio() {
 function playAudio2() {
   var audio = new Audio("assets/sounds/clickSound.wav");
   audio.play();
+}
+
+function override(){
+  fixedWin = true;
 }
