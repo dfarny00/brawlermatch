@@ -109,6 +109,7 @@ function handleCardClick(event){
       $(".brawlStars").on("click", handleCardClick);
       if(max_matches === matches || fixedWin === true){
         $(".brawlStars").off("click", handleCardClick);
+
         var winningDiv = $('.youWin');
         winningDiv.removeClass('hidden');
         winningDiv.text("You Won!");
@@ -116,29 +117,24 @@ function handleCardClick(event){
         var inputLabel = $("<label>");
         inputLabel.attr("for", "nameInput");
         inputLabel.addClass("labelInput");
-        inputLabel.html("<br>" + "Enter name: ");
-        winningDiv.append(inputLabel);
+        inputLabel.html("Enter name: ");
+
+        var inputFormForm = $("<form>");
+        inputFormForm.attr("id", "target");
 
         var inputForm = $("<input>");
         inputForm.attr("type", "text");
         inputForm.attr("id", "nameInput");
 
-        winningDiv.append(inputForm);
-
-        inputForm.keydown(function (event) {
-          if (event.which === 13) {
-            console.log(event.which);
-            inputForm.submit(() => nameSubmit);
-            return false;
-          }
-        });
-
         var inputButton = $("<input>");
         inputButton.attr("type", "submit");
         inputButton.attr("id", "nameButton");
-        winningDiv.append(inputButton);
 
-        $('#nameButton').on("click", nameSubmit);
+        inputFormForm.append(inputLabel, inputForm, inputButton);
+        winningDiv.append(inputFormForm);
+
+        $('#target').on("submit", nameSubmit);
+
 
         var scoreTable = $("<div>");
         scoreTable.addClass("scores");
@@ -158,6 +154,7 @@ function nameSubmit(){
   addScore(inputText);
   $("youWin").addClass("hidden");
   $("table").removeClass("hidden");
+  event.preventDefault();
 
 }
 
