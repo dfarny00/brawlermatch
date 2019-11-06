@@ -8,6 +8,7 @@ var max_matches = 9;
 var attempts = 0;
 var games_played = 0;
 var accuracy = 0;
+var fixedWin = false;
 
 function intializeApp(){
   shuffleCards();
@@ -101,13 +102,14 @@ function handleCardClick(event){
     secondCardUrl = $(secondCardClicked).siblings().css("background-image");
     $(".brawlStars").off("click", handleCardClick);
     attempts++;
-    if (firstCardUrl === secondCardUrl){
+    if (firstCardUrl === secondCardUrl || fixedWin === true){
       matches++;
       firstCardClicked = null;
       secondCardClicked = null;
       $(".brawlStars").on("click", handleCardClick);
-      if(max_matches === matches){
+      if(max_matches === matches || fixedWin === true){
         $(".brawlStars").off("click", handleCardClick);
+
         var winningDiv = $('.youWin');
         winningDiv.removeClass('hidden');
         winningDiv.text("You Won!");
@@ -115,20 +117,24 @@ function handleCardClick(event){
         var inputLabel = $("<label>");
         inputLabel.attr("for", "nameInput");
         inputLabel.addClass("labelInput");
-        inputLabel.html("<br>" + "Enter name: ");
-        winningDiv.append(inputLabel);
+        inputLabel.html("Enter name: ");
+
+        var inputFormForm = $("<form>");
+        inputFormForm.attr("id", "target");
 
         var inputForm = $("<input>");
         inputForm.attr("type", "text");
         inputForm.attr("id", "nameInput");
-        winningDiv.append(inputForm);
 
         var inputButton = $("<input>");
         inputButton.attr("type", "submit");
         inputButton.attr("id", "nameButton");
-        winningDiv.append(inputButton);
 
-        $('#nameButton').on("click", nameSubmit);
+        inputFormForm.append(inputLabel, inputForm, inputButton);
+        winningDiv.append(inputFormForm);
+
+        $('#target').on("submit", nameSubmit);
+
 
         var scoreTable = $("<div>");
         scoreTable.addClass("scores");
@@ -148,6 +154,7 @@ function nameSubmit(){
   addScore(inputText);
   $("youWin").addClass("hidden");
   $("table").removeClass("hidden");
+  event.preventDefault();
 
 }
 
@@ -177,6 +184,7 @@ function resetGame(){
   attempts = 0;
   $('.attempts').text("0");
   $('.accuracy').text('0%');
+  fixedWin = false;
 }
 
 function calculateAccuracy(){
@@ -216,4 +224,8 @@ function playAudio() {
 function playAudio2() {
   var audio = new Audio("assets/sounds/clickSound.wav");
   audio.play();
+}
+
+function override(){
+  fixedWin = true;
 }
